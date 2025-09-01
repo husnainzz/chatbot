@@ -26,10 +26,10 @@ const auth = new GoogleAuth({
 // Define the array of models to try (fallback mechanism)
 const modelNames = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"];
 
-// Context about Hobjob for the chatbot - focused on website guidance
+// Context about Hopjob for the chatbot - focused on website guidance
 const HOPJOB_CONTEXT = `You are an AI assistant for Hopjob, a B2C job recruiting platform with AI-powered features.
 
-ABOUT HOPOB (this is the information you have):
+ABOUT HOPJOB (this is the information you have):
 Hopjob is a job recruiting platform that helps candidates:
 - Submit and enhance CVs using AI analysis
 - Prepare for interviews via AI-driven assessments
@@ -240,7 +240,7 @@ app.post('/chat', async (req, res) => {
             {
               parts: [
                 { text: HOPJOB_CONTEXT },
-                { text: `User question: ${message}. Remember: You know about Hobjob and should help with website navigation.` }
+                { text: `User question: ${message}. Remember: You know about Hopjob and should help with website navigation.` }
               ]
             }
           ]

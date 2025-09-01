@@ -1,6 +1,7 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from "react";
 
-const API_URL = "http://localhost:8000/chat"; // Change to your deployed backend URL when ready
 
 const styles = {
   chatButton: {
@@ -117,7 +118,8 @@ const styles = {
   },
 };
 
-export default function ChatbotWidget() {
+export default function ChatbotWidget({ apiUrl }) {
+  const API_URL = apiUrl || "http://localhost:8000/chat";
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
